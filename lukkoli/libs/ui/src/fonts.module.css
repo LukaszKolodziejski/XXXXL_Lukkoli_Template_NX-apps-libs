@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Lukkoli-Italic';
+    src: url('./fonts/Lukkoli-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Lukkoli-Regular';
+    src: url('./fonts/Lukkoli-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Lukkoli-SemiBold';
+    src: url('./fonts/Lukkoli-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Lukkoli-CompressedBold';
+    src: url('./fonts/Lukkoli-CompressedBold.otf') format('opentype');
+}

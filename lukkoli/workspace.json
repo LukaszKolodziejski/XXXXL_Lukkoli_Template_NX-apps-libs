@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "api": "libs/api",
+    "developer-kit": "libs/developer-kit",
+    "lukkolispace": "apps/lukkolispace",
+    "lukkolispace-e2e": "apps/lukkolispace-e2e",
+    "lukkolispace-services": "libs/lukkolispace-services",
+    "lukkolispace-store": "libs/lukkolispace-store",
+    "ui": "libs/ui",
+    "ui-e2e": "apps/ui-e2e"
+  }
+}

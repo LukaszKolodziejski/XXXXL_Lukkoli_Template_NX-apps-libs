@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2019", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lukkoli/api": ["libs/api/src/index.ts"],
+      "@lukkoli/developer-kit": ["libs/developer-kit/src/index.ts"],
+      "@lukkoli/lukkolispace-services": [
+        "libs/lukkolispace-services/src/index.ts"
+      ],
+      "@lukkoli/lukkolispace-store": ["libs/lukkolispace-store/src/index.ts"],
+      "@lukkoli/ui": ["libs/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

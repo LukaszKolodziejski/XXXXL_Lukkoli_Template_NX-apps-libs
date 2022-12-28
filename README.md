@@ -3,7 +3,7 @@
 ## First run tutorial
 
 [WARNING] You should use Node 16 to be able to use the project properly. <br/> Node > 16 causes errors.
-
+ 
 1. `cd lukkoli`
 2. `npm install --legacy-peer-deps`
 3. `npm start` - runs all apps in monorepo in our case we have only one

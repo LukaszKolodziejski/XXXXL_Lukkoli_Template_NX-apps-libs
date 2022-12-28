@@ -1,10 +1,12 @@
 import {
   Country,
   loadCountries,
+  createOffice,
+  editOffice,
   loadOffice,
   Office,
 } from '@lukkoli/lukkolispace-services';
-import { filter, of, map, switchMap, catchError, zip } from 'rxjs';
+import { filter, of, map, switchMap, catchError, zip, concat } from 'rxjs';
 import { lukkolispaceEpic } from '../store';
 import { officeManagementActions } from './slice';
 
@@ -62,6 +64,34 @@ export const prepareOfficeManagement: lukkolispaceEpic = (action$) =>
           })
         ),
         catchError(() => of(officeManagementActions.prepareFailed()))
+      );
+    })
+  );
+
+export const finishOfficeManagement: lukkolispaceEpic = (action$) =>
+  action$.pipe(
+    filter(officeManagementActions.finish.match),
+    switchMap(({ payload: officeId }) => {
+      let obs$;
+      obs$ = editOffice.mock(OFFICE).pipe(
+        map(() => officeManagementActions.edited()),
+        catchError(() => of(officeManagementActions.editFailed()))
+      );
+
+      if (officeId === undefined) {
+        obs$ = createOffice.mock(OFFICE).pipe(
+          map(() => officeManagementActions.created()),
+          catchError(() => of(officeManagementActions.createFailed()))
+        );
+      }
+
+      return concat(
+        of(
+          officeId === undefined
+            ? officeManagementActions.creating()
+            : officeManagementActions.editing()
+        ),
+        obs$
       );
     })
   );

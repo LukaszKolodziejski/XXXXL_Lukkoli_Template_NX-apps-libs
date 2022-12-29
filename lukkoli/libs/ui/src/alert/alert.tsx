@@ -6,7 +6,8 @@ import {
   mdiInformationOutline,
 } from '@mdi/js';
 import Icon from '@mdi/react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { SmallTitle } from '../typography';
 
 export interface AlertProps {
@@ -40,18 +41,24 @@ const THEME = {
   },
 };
 
-const appear = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.2);
-  } 80% {
-    opacity: 1;
-  } 100% {
-    transform: scale(1);
-  }
-`;
+const animate = {
+  initial: { opacity: 0, scale: 0.2 },
+  animate: { opacity: 1, scale: 1 },
+  transition: {
+    default: {
+      duration: 0.3,
+      ease: [0, 0.71, 0.2, 1.01],
+    },
+    scale: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 80,
+      restDelta: 0.001,
+    },
+  },
+};
 
-const Container = styled.div<{
+const Container = styled(motion.div)<{
   severity: AlertProps['severity'];
 }>`
   display: flex;
@@ -60,8 +67,6 @@ const Container = styled.div<{
   padding: 16px;
   min-height: 60px;
   box-shadow: 0px 4px 6px #0000002f;
-  will-change: transform, opacity;
-  animation: ${appear} 0.3s forwards;
 
   ${SmallTitle} {
     line-height: 24px;
@@ -79,7 +84,7 @@ const IconContainer = styled.div`
 
 export const Alert = ({ severity, message, onClose }: AlertProps) => {
   return (
-    <Container severity={severity}>
+    <Container severity={severity} {...animate}>
       <IconContainer>{THEME[severity].icon}</IconContainer>
       <SmallTitle>{message}</SmallTitle>
       {onClose && (

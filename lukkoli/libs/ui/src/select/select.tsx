@@ -90,7 +90,7 @@ export const Select = ({
 }: SelectProps) => {
   const [open, setOpen] = useState(false);
 
-  const enhancedChildren = Children.map(children, (child, idx) => {
+  const enhancedChildren = Children.map(children, (child, index) => {
     if (!isValidElement<SelectItemProps>(child)) {
       return null;
     }

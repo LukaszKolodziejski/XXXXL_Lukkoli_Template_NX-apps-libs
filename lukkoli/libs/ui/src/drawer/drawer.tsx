@@ -151,9 +151,7 @@ export const Drawer = ({ onClose, items }: DrawerProps) => {
 
   const close = () => {
     setOpen(false);
-    setTimeout(() => {
-      onClose();
-    }, 200);
+    setTimeout(onClose, 200);
   };
 
   const handleItemClick = (fn: DrawerMenuItem['onClick']): void => {
@@ -167,7 +165,6 @@ export const Drawer = ({ onClose, items }: DrawerProps) => {
       <Catcher>
         <Container open={open} data-cy="drawer">
           {logo}
-
           <List>
             {items.map((item) => (
               <Link
@@ -176,13 +173,15 @@ export const Drawer = ({ onClose, items }: DrawerProps) => {
                 title={item.title}
               >
                 {item.icon}
-
                 <Heading>{item.title}</Heading>
               </Link>
             ))}
           </List>
-
-          <Button onClick={close} data-testid="close-button" data-cy="close-menu">
+          <Button
+            onClick={close}
+            data-testid="close-button"
+            data-cy="close-menu"
+          >
             <Icon path={mdiChevronLeft} size={1.3} color="white" />
           </Button>
         </Container>

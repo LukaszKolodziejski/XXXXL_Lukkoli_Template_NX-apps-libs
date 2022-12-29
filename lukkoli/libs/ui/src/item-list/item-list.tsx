@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
 import Icon from '@mdi/react';
-import { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Input } from '../input';
 
@@ -126,9 +126,7 @@ export const ItemList = <T extends DataItem>({
           data-cy="add-item-input"
           value={newItem}
           placeholder={placeholder}
-          onChange={(event) => {
-            setNewItem(event.target.value);
-          }}
+          onChange={(e) => setNewItem(e.target.value)}
         />
         {newItem.length ? (
           <IconContainer onClick={() => addItem(newItem)}>

@@ -165,30 +165,30 @@ export interface SelectionDialogItemProps {
 }
 
 const getMotiveStyle = (motive: SelectionDialogItemProps['motive']) => {
-  const grayMotive = css`
-    background: #f6f6f6;
-    color: #000;
-  `;
+  const THEME = {
+    gray: {
+      background: '#f6f6f6',
+      color: '#000',
+    },
+    green: {
+      background: '#0a782c',
+      color: '#fff !important',
+    },
+    red: {
+      background: '#ff0000',
+      color: '#fff !important',
+    },
+  };
 
-  if (motive === 'gray') {
-    return grayMotive;
-  }
-
-  if (motive === 'green') {
+  if (motive) {
     return css`
-      background: #0a782c;
-      color: #fff !important;
+      ${THEME[motive]}
+    `;
+  } else {
+    return css`
+      ${THEME['gray']}
     `;
   }
-
-  if (motive === 'red') {
-    return css`
-      background: #ff0000;
-      color: #fff !important;
-    `;
-  }
-
-  return grayMotive;
 };
 
 const dottedText = css`

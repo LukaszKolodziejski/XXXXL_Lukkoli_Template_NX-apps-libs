@@ -22,7 +22,7 @@ import { useRouteSearchParams } from '@lukkoli/developer-kit';
 const OfficeDetailsController = Loadable({
   loader: () =>
     import('./office-details.controller').then(
-      (module: any) => module.OfficeDetailsController
+      (module) => module.OfficeDetailsController
     ),
   loading: () => null,
 });
@@ -30,7 +30,7 @@ const OfficeDetailsController = Loadable({
 const OfficeZonesController = Loadable({
   loader: () =>
     import('./office-zones.controller').then(
-      (module: any) => module.OfficeZonesController
+      (module) => module.OfficeZonesController
     ),
   loading: () => null,
 });
@@ -38,7 +38,7 @@ const OfficeZonesController = Loadable({
 const OfficeDesksController = Loadable({
   loader: () =>
     import('./office-desks.controller').then(
-      (module: any) => module.OfficeDesksController
+      (module) => module.OfficeDesksController
     ),
   loading: () => null,
 });
@@ -46,7 +46,7 @@ const OfficeDesksController = Loadable({
 const ParkingZonesController = Loadable({
   loader: () =>
     import('./parking-zones.controller').then(
-      (module: any) => module.ParkingZonesController
+      (module) => module.ParkingZonesController
     ),
   loading: () => null,
 });
@@ -54,16 +54,14 @@ const ParkingZonesController = Loadable({
 const ParkingSpacesController = Loadable({
   loader: () =>
     import('./parking-spaces.controller').then(
-      (module: any) => module.ParkingSpacesController
+      (module) => module.ParkingSpacesController
     ),
   loading: () => null,
 });
 
 const SummaryController = Loadable({
   loader: () =>
-    import('./summary.controller').then(
-      (module: any) => module.SummaryController
-    ),
+    import('./summary.controller').then((module) => module.SummaryController),
   loading: () => null,
 });
 

@@ -5,9 +5,7 @@ import { TITLES } from './config';
 
 const OfficeManagementController = Loadable({
   loader: () =>
-    import('./controllers').then(
-      (module: any) => module.OfficeManagementController
-    ),
+    import('./controllers').then((module) => module.OfficeManagementController),
   loading: () => null,
 });
 

@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
 import Icon from '@mdi/react';
-import { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Input } from '../input';
 

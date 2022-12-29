@@ -126,9 +126,7 @@ export const ItemList = <T extends DataItem>({
           data-cy="add-item-input"
           value={newItem}
           placeholder={placeholder}
-          onChange={(event) => {
-            setNewItem(event.target.value);
-          }}
+          onChange={(e) => setNewItem(e.target.value)}
         />
         {newItem.length ? (
           <IconContainer onClick={() => addItem(newItem)}>

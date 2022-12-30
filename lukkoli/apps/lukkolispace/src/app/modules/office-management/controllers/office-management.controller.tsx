@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
+import Loadable from 'react-loadable';
+import { useRouteSearchParams } from '@lukkoli/developer-kit';
 import {
   Alert,
   Center,
@@ -9,7 +11,6 @@ import {
   Streched,
   useStepsProvider,
 } from '@lukkoli/ui';
-import Loadable from 'react-loadable';
 import {
   officeManagementActions,
   officeManagementSelect,
@@ -17,7 +18,6 @@ import {
   useSelector,
 } from '@lukkoli/lukkolispace-store';
 import { TITLES } from '../config';
-import { useRouteSearchParams } from '@lukkoli/developer-kit';
 
 const OfficeDetailsController = Loadable({
   loader: () =>

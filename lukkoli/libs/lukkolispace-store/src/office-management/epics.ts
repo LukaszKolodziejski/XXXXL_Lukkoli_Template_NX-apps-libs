@@ -48,9 +48,7 @@ export const prepareOfficeManagement: lukkolispaceEpic = (action$) =>
       if (officeId === undefined) {
         return loadCountries.mock(COUNTRIES).pipe(
           map(({ data: countries }) =>
-            officeManagementActions.creation({
-              countries,
-            })
+            officeManagementActions.creation({ countries })
           ),
           catchError(() => of(officeManagementActions.prepareFailed()))
         );

@@ -10,8 +10,8 @@ import {
 import { add, id, remove, update } from '@lukkoli/developer-kit';
 import { slice, Action } from '../abstraction';
 import { initial, set } from './config';
-import { MIN_DESKS_COUNT, MIN_SPACES_COUNT } from './consts';
 import { OfficeId, OfficeManagementReducerState } from './models';
+import { MIN_DESKS_COUNT, MIN_SPACES_COUNT } from './consts';
 import { getSetableState, getSafeValue } from './guards';
 
 export const INITIAL_STATE: OfficeManagementReducerState = {

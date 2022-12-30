@@ -10,8 +10,4 @@ export type Action<
 export type State<
   S extends string,
   D extends Record<string, unknown> | undefined = undefined
-> = D extends undefined
-  ? {
-      stage: S;
-    }
-  : D & { stage: S };
+> = D extends undefined ? { stage: S } : D & { stage: S };

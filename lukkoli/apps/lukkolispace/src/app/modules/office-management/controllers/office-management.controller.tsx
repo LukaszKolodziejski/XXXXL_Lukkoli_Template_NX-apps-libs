@@ -76,8 +76,8 @@ const CONTROLLERS = [
 
 export const OfficeManagementController = () => {
   const { officeId } = useRouteSearchParams<{ officeId: string }>();
-  const dispatch = useDispatch();
   const { step } = useStepsProvider();
+  const dispatch = useDispatch();
   const stage = useSelector(officeManagementSelect.stage);
 
   useEffect(() => {

@@ -14,7 +14,6 @@ import {
   RangeSelectItem,
 } from '../components';
 import { Detail } from '@lukkoli/ui';
-import { useNavigate } from 'react-router-dom';
 
 const useParkingSpaces = () => {
   const dispatch = useDispatch();
